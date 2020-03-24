@@ -11,8 +11,8 @@ build: build-stamp
 build-stamp:
 	dh_testdir
 	# Add here commands to compile the package.
-	$(MAKE) -C src bin/undionly.kkpxe
-	$(MAKE) -C src bin-x86_64-efi/snponly.efi
+	$(MAKE) NO_WERROR=1 -C src bin/undionly.kkpxe
+	$(MAKE) NO_WERROR=1 -C src bin-x86_64-efi/snponly.efi
 
 	touch build-stamp
 
