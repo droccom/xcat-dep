@@ -241,6 +241,9 @@ REQUIRE_OBJECT ( vlan_cmd );
 #ifdef REBOOT_CMD
 REQUIRE_OBJECT ( reboot_cmd );
 #endif
+#ifdef TPM_CMD
+REQUIRE_OBJECT ( tpm_cmd );
+#endif
 
 /*
  * Drag in miscellaneous objects

@@ -141,6 +141,15 @@ static int script_exec ( struct image *image ) {
 	 */
 	unregister_image ( image );
 
+#ifdef TPM_CMD
+	/* Measure the script */
+	if (tpm_present()) {
+		uint8_t digest[sha1_algorithm.digestsize];
+		hash_image(image, digest);
+		update_pcr(5, digest);
+	}
+#endif
+
 	/* Preserve state of any currently-running script */
 	saved_offset = script_offset;
 

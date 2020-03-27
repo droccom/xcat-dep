@@ -126,6 +126,7 @@ FILE_LICENCE ( GPL2_OR_LATER );
 #undef	VLAN_CMD		/* VLAN commands */
 #undef	PXE_CMD			/* PXE commands */
 #undef	REBOOT_CMD		/* Reboot command */
+//#define TPM_CMD                 /* TPM command */
 
 /*
  * ROM-specific options
