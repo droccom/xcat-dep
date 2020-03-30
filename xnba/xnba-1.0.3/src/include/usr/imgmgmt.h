@@ -23,6 +23,7 @@ extern int imgdownload_string ( const char *uri_string, const char *name,
 				int ( * action ) ( struct image *image ) );
 extern void imgstat ( struct image *image );
 extern void imgfree ( struct image *image );
+extern int imgacquire ( const char *name, struct image **image );
 
 /**
  * Select an image for execution
