@@ -1,6 +1,7 @@
 #!/bin/bash
 
 cd xnba-1.0.3
+mkdir -p src/config/local
 cp -rL ../debian .
 dpkg-buildpackage -uc -us  -aamd64 
 
