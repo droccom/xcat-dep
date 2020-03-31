@@ -241,21 +241,3 @@ void imgstat ( struct image *image ) {
 void imgfree ( struct image *image ) {
 	unregister_image ( image );
 }
-
-/**
- * Acquire an image
- *
- * @v name_uri		Name or URI string
- * @v image		Image to fill in
- * @ret rc		Return status code
- */
-int imgacquire ( const char *name_uri, struct image **image ) {
-
-	/* If we already have an image with the specified name, use it */
-	*image = find_image ( name_uri );
-	if ( *image )
-		return 0;
-
-	/* Otherwise, download a new image */
-	return imgdownload_string ( name_uri, NULL, image );
-}
